@@ -1,23 +1,26 @@
 import React from 'react';
 import Head from "next/head";
+import Header from "./header";
 
 type Props = {
   title?: string,
   children: JSX.Element,
 };
 
-const Index: React.FC<Props> = ({ title = "blog", children}) => {
+const Index: React.FC<Props> = ({title = "blog", children}) => {
   return (
-    <div className="bg-gray-300">
+    <>
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico"/>
       </Head>
-      <main className="container mx-auto max-w-xl pt-8 min-h-screen">
-        {children}
-      </main>
-
-    </div>
+      <div className="">
+        <Header/>
+        <main className="container mx-auto max-w-xl pt-8 min-h-screen">
+          {children}
+        </main>
+      </div>
+    </>
   );
 };
 
