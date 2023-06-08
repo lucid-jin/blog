@@ -2,9 +2,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  name: string
+  text: string,
+  centerLabel: string;
 }
 
-export default (req: NextApiRequest, res: NextApiResponse<Data>) => {
-  res.status(200).json({ name: 'John Doe' })
+export default function handler(
+    req: NextApiRequest,
+    res: NextApiResponse<Data>
+) {
+  res.status(200).json({ text: '센터라벨', centerLabel: '센터 라벨일에요' })
 }
